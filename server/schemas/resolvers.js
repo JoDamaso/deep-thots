@@ -1,0 +1,14 @@
+const { User, Thought } = require('../models');
+
+const resolvers = {
+    Query: {
+        thoughts: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Thought.find(params).sort({ createdAt: -1 });
+        }
+    }
+};
+
+// 21.1.6 
+
+module.exports = resolvers;
