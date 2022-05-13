@@ -8,7 +8,7 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        FriendCount: Int
+        friendCount: Int
         thoughts: [Thought]
         friends: [User]
     }
@@ -28,7 +28,7 @@ const typeDefs = gql`
     }
     type Query {
         users: [User]
-        user:(username: String!): User
+        user(username: String!): User
         thoughts(username: String): [Thought]
         thought(_id: ID!): Thought
     }
